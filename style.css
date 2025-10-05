@@ -1,0 +1,722 @@
+
+/* Root Variables */
+
+:root {
+  --primary-red: #FA1239;
+  --light-pink-bg: #fdf2f8;
+  --light-red-tag: #fee2e2;
+  --text-dark: #333;
+  --text-light: #666;
+  --border-color: #e5e7eb;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #f9fafb;
+  margin: 0;
+  padding: 0;
+  color: var(--text-dark);
+  overflow-x: hidden; /* Prevent horizontal scroll from circle */
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 1.5rem;
+}
+
+
+/* Header & Navigation */
+
+header {
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.07);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 0.5rem;
+}
+
+
+nav {
+  display: none; /* Hidden by default, shown on larger screens */
+}
+@media(min-width: 992px) {
+nav {
+    display: flex;
+    gap: 1.8rem;
+    align-items: center;
+    
+  }
+}
+nav .nav-elements{
+   display: flex;
+    gap: 1.8rem;
+    align-items: center;
+    margin-right: 150px;
+}
+nav a {
+  color: black;
+  font-size: 1rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: var(--primary-red);
+}
+
+
+/* Buttons */
+
+.btn {
+  padding: 0.6rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 300;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+  text-align: center;
+  border: 2px solid transparent;
+}
+
+.btn-primary {
+  background: var(--primary-red);
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  color: white;
+  box-shadow: 0 6px 20px rgba(239, 68, 68, 0.4);
+}
+
+.btn-outline {
+  border-color: var(--primary-red);
+  color: var(--primary-red);
+  background: white;
+}
+ 
+.btn-outline:hover {
+  background: var(--primary-red);
+  color: #fff;
+}
+.btn {
+  /* red glow */
+  box-shadow: 0 0 20px rgba(239, 68, 68, 0.6);
+  
+  /* Adding a transition on hover */
+  transition: all 0.3s ease;
+}
+
+/* Make the glow more when hovering  */
+.btn:hover {
+  box-shadow: 0 0 25px rgba(239, 68, 68, 0.6);
+}
+
+/* Mobile Menu */
+
+#menu-toggle {
+  display: none;
+}
+
+.mobile-menu-btn {
+  display: block;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+@media (min-width: 992px) {
+  .mobile-menu-btn {
+    display: none;
+  }
+  .hero{
+    background: linear-gradient(to right , #FFBFCA,#FFE2E7);
+  }
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s, visibility 0.4s;
+  z-index: 110;
+}
+
+#menu-toggle:checked ~ .overlay {
+  opacity: 1;
+  visibility: visible;
+}
+i{
+  padding-right: 20px;
+}
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 85%;
+  max-width: 340px;
+  height: 100vh;
+  background: #FFE2E7; 
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  transition: right 0.4s ease;
+  z-index: 120;
+}
+
+#menu-toggle:checked ~ .sidebar {
+  right: 0;
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+  margin-bottom: 2rem;
+}
+
+/*  logo inside the sidebar */
+.sidebar .company-name .logo {
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 0px;
+}
+.sidebar .company-name .tagline {
+  font-size: 0.8rem;
+}
+.sidebar .company-name img {
+  height: 30px;
+}
+
+
+.close-btn {
+  font-size: 1.8rem;
+  color: var(--primary-red);
+  cursor: pointer;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.sidebar a {
+  font-size: 1.1rem; 
+  font-weight: 600; 
+  color: #444;
+  text-decoration: none;
+  transition: color 0.3s;
+  padding: 1.2rem 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.sidebar a:hover {
+  color: var(--primary-red);
+}
+
+.sidebar span:first-child {
+  width: 24px;
+  text-align: center;
+  color: var(--primary-red);
+}
+
+.sidebar .btn-primary {
+   color: white;
+  font-size: 1.5rem;
+  padding-block: 0.5rem;
+  font-weight: 100;
+  display: flex;
+  justify-content: center;
+}
+.sidebar .btn-primary:hover{
+  color: white;
+}
+
+
+/* Hero Section */
+
+.hero {
+  background: linear-gradient(to right , #FFBFCA,#FFE2E7);
+  padding: 4rem 0;
+}
+
+@media(min-width: 992px) {
+  .hero {
+    padding: 6rem 0;
+  }
+}
+
+.hero .container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+@media(min-width: 992px) {
+  .hero .container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.hero-content {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+@media(min-width: 992px) {
+  
+  .hero-content {
+    text-align: left;
+  }
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+@media(min-width: 768px) {
+  .hero h1 {
+    font-size: 3.5rem;
+  }
+}
+
+.highlight {
+  color: var(--primary-red);
+}
+
+
+.hero p {
+  color: var(--text-dark);
+  max-width: 500px;
+  margin: 0 auto 2rem auto;
+}
+
+@media(min-width: 992px) {
+  .hero p {
+    margin: 0 0 2rem 0;
+  }
+}
+
+.hero .actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media(min-width: 992px) {
+  .hero .actions {
+    justify-content: flex-start;
+  }
+}
+
+.hero-img-wrapper {
+  position: relative;
+  z-index: 2;
+  margin-bottom: -4rem; 
+}
+
+.hero-img-wrapper::before {
+  content: '';
+  position: absolute;
+  width: 110%;
+  aspect-ratio: 1 / 1; 
+  border-radius: 50%;
+  border: 80px solid rgba(239, 68, 68, 0.1);
+  box-sizing: border-box;
+  top: 55%;
+  left: 52%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+.hero-img-wrapper img {
+  border-radius: 24px;
+  width: 100%;
+  max-width: 520px; 
+  display: block;
+  margin: auto;
+  position: relative; 
+}
+
+.floating-card {
+  position: absolute;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 16px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  animation: float 6s ease-in-out infinite;
+  z-index: 2;
+}
+
+/* sizes for floating cards (mobile)  */
+.rating-card {
+  top: 50%;
+  left: -40px;
+  transform: translateY(-50%);
+}
+
+.rating-card .score {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1CB098;
+  margin: 0;
+}
+
+.rating-card .text p {
+  font-size: 0.8rem; 
+  color: #555;
+  margin: 0;
+}
+
+.resume-card {
+  bottom: 2rem;
+  right: -20px;
+  animation-delay: 1s;
+}
+
+.resume-card .icon {
+  background: var(--light-red-tag); 
+  padding: 0.8rem; 
+  border-radius: 12px;
+}
+
+.resume-card .text .count {
+  font-size: 1.5rem; 
+  font-weight: 700; 
+  margin: 0;
+}
+
+.resume-card .text p {
+  font-size: 0.8rem; 
+  color: var(--text-dark); 
+  margin:0;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+
+
+
+/* Features Section */
+
+.features {
+  background: #fff;
+  padding: 5rem 0;
+}
+
+.features .container {
+  text-align: center;
+}
+
+.features .tag {
+  background: var(--light-red-tag);
+  color: var(--primary-red);
+  padding: 0.3rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.features h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: 1rem;
+  color: var(--text-dark);
+  margin-bottom: 3rem;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media(min-width: 768px) {
+  
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .card {
+    text-align: left;
+  }
+}
+@media(min-width: 1200px) {
+  
+  .features-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.card {
+  border: 1px solid var(--border-color);
+  padding: 2rem;
+  border-radius: 16px;
+  transition: all 0.3s;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+  text-align: center;
+}
+
+.card:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  transform: translateY(-8px);
+  border-color: var(--primary-red);
+}
+
+.card img {
+  height: 200px;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+#star{
+    color:gold;
+}
+
+
+/* Company Logo Styling */
+
+
+.company-name {
+  display: flex; 
+  align-items: center; 
+  gap: 0.75rem; 
+}
+
+.company-name .logo-text {
+  display: flex;
+  flex-direction: column; 
+}
+
+.company-name .logo {
+  font-size: 2rem; 
+  font-weight: 500;
+  color: #333;
+  text-decoration: none;
+  line-height: 1.2; 
+}
+
+.company-name .tagline {
+  font-size: 1.2rem;
+  color: #333;
+  margin-top: -0.2rem; 
+}
+
+.company-name img {
+  height: 80px; 
+  width: auto; 
+}
+.feature-heading{
+  background-color: #FFE2E7;
+  padding:0.6rem  1.5rem ;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+ .company-name .logo {
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 0px;
+}
+.company-name .tagline {
+  font-size: 0.8rem;
+}
+.company-name img {
+  height: 30px;
+}
+/* Responsive adjustments for floating cards */
+@media (max-width: 1200px) {
+  .hero{
+    background: linear-gradient(to right , #FFBFCA,#FFE2E7);
+  }
+  /* No changes for tablets/smaller desktops for floating card positions, 
+     but we want to use the default sizes defined above */
+  .rating-card { left: 0; } /* Reset for consistency if needed */
+  .resume-card { right: 0; } /* Reset for consistency if needed */
+}
+
+@media (max-width: 576px) {
+ 
+.sidebar .company-name {
+  display: flex; 
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar .company-name .logo-text {
+  display: flex;
+  flex-direction: column; 
+}
+
+.sidebar .company-name .logo {
+  font-size: 1.5rem; 
+  font-weight: 500;
+  color: #333;
+  text-decoration: none;
+   /
+}
+
+.sidebar .company-name .tagline {
+  font-size: 1rem;
+  color: #333;
+  
+}
+
+.sidebar .company-name img {
+  height: 40px; 
+  width: auto; 
+}
+  .hero{
+    background: linear-gradient(#FFBFCA,#FFE2E7);
+  }
+  .floating-card {
+    animation-name: none; /* Disable floating on mobile */
+  }
+  .rating-card {
+    top: 50%; 
+    left: 10px;
+    transform: translateY(-50%) scale(0.9);
+  }
+  .resume-card {
+    top: auto;
+    bottom: 20px;
+    right: 10px;
+    transform: scale(0.9);
+  }
+}
+
+
+/* NEW: Larger floating cards for desktop sizes  */
+@media (min-width: 992px) {
+.company-name .logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 0px;
+}
+.company-name .tagline {
+  font-size: 1rem;
+}
+.company-name img {
+  height: 60px;
+}
+
+.scribble-underline {
+     position: relative;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.scribble-underline::after {
+   content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -8px;
+    height: 6px;
+    border-bottom: 2px solid #e6004a;
+    box-shadow: 0 -4px 0 0 #e6004a;
+    
+ 
+    transform-origin: top right; 
+    border-radius: 0 0 50% 50% / 0 0 15px 15px; 
+}
+  .hero-img-wrapper {
+    margin-bottom: -6rem; /* Adjust negative margin for desktop padding */
+  }
+
+  .floating-card {
+    padding: 1.5rem;
+    gap: 1.5rem; 
+    border-radius: 20px; 
+  }
+
+  .rating-card {
+    left: -80px; 
+    transform: translateY(-50%) scale(1); 
+  }
+  .rating-card .score {
+    font-size: 3.5rem; 
+  }
+  .rating-card .text {
+    display: flex; 
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .rating-card .text p {
+    font-size: 0.9rem;
+  }
+
+  .resume-card {
+    bottom: 3rem; 
+    right: -60px; 
+    transform: scale(1); 
+  }
+  .resume-card .icon {
+    padding: 1.2rem;
+    border-radius: 16px; 
+  }
+  .resume-card .text .count {
+    font-size: 2rem; 
+  }
+  .resume-card .text p {
+    font-size: 0.9rem;
+  }
+  .text #star {
+    font-size: 1.7rem;
+    margin-bottom: 0.25rem; 
+  }
+
+  .text p.rating {
+    font-size: 1.5rem;
+    font-weight: 900;
+  }
+}
