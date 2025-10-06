@@ -11,7 +11,7 @@ It showcases a modern, clean design for a **resume-building service**, built wit
 ## 📸 Final Preview
 
 Here’s a look at the final design across different screen sizes:
-👉 [Preview Images](preview image/desktop preview.png)
+👉 [Preview Images](https://github.com/iqamarshafi/Infotech-Services---Assignment/tree/main/preview%20image)
 
 ### 🖥️ Desktop View 
 ###
