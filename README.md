@@ -12,7 +12,8 @@ It showcases a modern, clean design for a **resume-building service**, built wit
 
 Here’s a look at the final design across different screen sizes:
 
-### 🖥️ Desktop View  
+### 🖥️ Desktop View 
+preview image/desktop preview.png
 ### 📱 Mobile View  
 
 ---
