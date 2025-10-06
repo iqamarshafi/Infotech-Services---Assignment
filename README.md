@@ -17,7 +17,7 @@ Here’s a look at the final design across different screen sizes:
 ###
 
 <div align="center">
-  <img src="https://github.com/iqamarshafi/Infotech-Services---Assignment/blob/main/preview%20image/Desktop%20view.gif?raw=true" height="300" alt="Desktop preview gif" />
+  <img src="preview image/Desktop view.gif" height="300" alt="Desktop preview gif" />
 </div>
 
 ###
