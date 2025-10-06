@@ -16,13 +16,20 @@ Here’s a look at the final design across different screen sizes:
 ###
 
 <div align="center">
-  <img src="preview image/desktop preview.png" height="300" alt="IMDB Dashboard gif" />
+  <img src="preview image/Desktop view.gif" height="300" alt="Desktop preview gif" />
 </div>
 
 ###
 
 ### 📱 Mobile View  
 
+###
+
+<div align="center">
+  <img src="preview image/Mobile view.gif" height="300" alt="Mobile preview gif" />
+</div>
+
+###
 ---
 
 ## ✨ Features
